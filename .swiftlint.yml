@@ -1,0 +1,16 @@
+disabled_rules:
+   - trailing_whitespace
+   - type_name
+   - comment_spacing
+   - line_length
+   - function_body_length
+   - cyclomatic_complexity
+   - identifier_name
+   - void_function_in_ternary
+   - file_length
+   - for_where
+   - orphaned_doc_comment
+   - function_parameter_count
+   - unavailable_condition
+   - superfluous_disable_command
+   - todo
