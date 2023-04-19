@@ -709,7 +709,7 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.2.0)
-  - SwiftLint (0.50.3)
+  - SwiftLint (0.51.0)
 
 DEPENDENCIES:
   - CLTypingLabel
@@ -754,7 +754,7 @@ SPEC CHECKSUMS:
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
-  SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
+  SwiftLint: 1b7561918a19e23bfed960e40759086e70f4dba5
 
 PODFILE CHECKSUM: 4ca36296946b056021bd688fc1c8bc56a60147a1
 

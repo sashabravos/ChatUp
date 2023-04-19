@@ -12,7 +12,7 @@ protocol ChatViewDelegate: AnyObject {
 
 final class ChatView: UIView, UITableViewDelegate, UITableViewDataSource {
     
-    var delegate: ChatViewDelegate?
+    weak var delegate: ChatViewDelegate?
     
     private var samples = Samples()
     private let largeConfig = UIImage.SymbolConfiguration(pointSize: 140, weight: .bold, scale: .large)
@@ -129,6 +129,6 @@ final class ChatView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 50
     }
 }

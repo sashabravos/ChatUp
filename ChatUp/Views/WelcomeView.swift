@@ -14,7 +14,7 @@ protocol WelcomeViewDelegate: AnyObject {
 
 final class WelcomeView: UIView {
     
-    var delegate: WelcomeViewDelegate?
+    weak var delegate: WelcomeViewDelegate?
     private var samples = Samples()
     
     lazy var loginButton = samples.loginButton

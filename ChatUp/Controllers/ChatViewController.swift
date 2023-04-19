@@ -30,8 +30,8 @@ class ChatViewController: UIViewController, ChatViewDelegate {
     }
     
     func loadMessages() {
-        dataBase.collection("messages")
-            .order(by: "data")
+        dataBase.collection(Samples.FStore.collectionName)
+            .order(by: Samples.FStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
                 self.chatView.messages = []
                 
@@ -41,7 +41,7 @@ class ChatViewController: UIViewController, ChatViewDelegate {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            if let messageSender = data["sender"] as? String, let messageBody = data["body"] as? String {
+                            if let messageSender = data[Samples.FStore.senderField] as? String, let messageBody = data[Samples.FStore.bodyField] as? String {
                                 let newMessage = Message(sender: messageSender, body: messageBody)
                                 self.chatView.messages.append(newMessage)
                                 

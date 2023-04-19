@@ -13,7 +13,7 @@ protocol LoginViewDelegate: AnyObject {
 
 final class LoginView: UIView {
     
-    var delegate: LoginViewDelegate?
+    weak var delegate: LoginViewDelegate?
     private var samples = Samples()
     
     private lazy var emailView: UIView = {

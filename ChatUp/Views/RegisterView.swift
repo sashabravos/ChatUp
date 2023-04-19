@@ -13,7 +13,7 @@ protocol RegisterViewDelegate: AnyObject {
 
 final class RegisterView: UIView {
     
-    var delegate: RegisterViewDelegate?
+    weak var delegate: RegisterViewDelegate?
     private var samples = Samples()
 
     private lazy var emailView: UIView = {
