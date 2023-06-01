@@ -42,9 +42,8 @@ final class LoginView: UIView {
         super.init(frame: frame)
         
         setSubViews()
-        //Delete this
-        emailTF.text = "me@mail.com"
-        passwordTF.text = "qwerty"
+//        emailTF.text = "1@bu.ru"
+//        passwordTF.text = "123456"
     }
     
     required init?(coder: NSCoder) {

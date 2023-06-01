@@ -14,12 +14,12 @@ class MessageTableViewCell: UITableViewCell {
     lazy var cellSV: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
         stackView.alignment = .top
         stackView.spacing = 20.0
         stackView.contentMode = .scaleToFill
         
-        [messageBubble, avatar].forEach {
+        [messageBubble, rightAvatar, leftAvatar].forEach {
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -47,8 +47,14 @@ class MessageTableViewCell: UITableViewCell {
         return label
     }()
     
-    lazy var avatar: UIImageView = {
+    lazy var rightAvatar: UIImageView = {
         let image = UIImageView.init(image: Samples.Avatars.blueFace)
+        image.contentMode = .scaleAspectFill
+        return image
+    }()
+    
+    lazy var leftAvatar: UIImageView = {
+        let image = UIImageView.init(image: Samples.Avatars.purpleFace)
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -76,17 +82,20 @@ class MessageTableViewCell: UITableViewCell {
             cellSV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0),
             
             messageBubble.topAnchor.constraint(equalTo: cellSV.topAnchor),
-            messageBubble.leadingAnchor.constraint(equalTo: cellSV.leadingAnchor),
+            messageBubble.leadingAnchor.constraint(equalTo: leftAvatar.trailingAnchor, constant: -20.0),
             messageBubble.bottomAnchor.constraint(equalTo: cellSV.bottomAnchor),
-            messageBubble.trailingAnchor.constraint(equalTo: avatar.leadingAnchor, constant: -20.0),
+            messageBubble.trailingAnchor.constraint(equalTo: rightAvatar.leadingAnchor, constant: -20.0),
             
             messageLabel.topAnchor.constraint(equalTo: messageBubble.topAnchor, constant: 10.0),
             messageLabel.leadingAnchor.constraint(equalTo: messageBubble.leadingAnchor, constant: 10.0),
             messageLabel.trailingAnchor.constraint(equalTo: messageBubble.trailingAnchor, constant: -10.0),
             messageLabel.bottomAnchor.constraint(equalTo: messageBubble.bottomAnchor, constant: -10.0),
             
-            avatar.heightAnchor.constraint(equalToConstant: 45.0),
-            avatar.widthAnchor.constraint(equalToConstant: 45.0)
+            rightAvatar.heightAnchor.constraint(equalToConstant: 45.0),
+            rightAvatar.widthAnchor.constraint(equalToConstant: 45.0),
+            
+            leftAvatar.heightAnchor.constraint(equalToConstant: 45.0),
+            leftAvatar.widthAnchor.constraint(equalToConstant: 45.0)
         ])
     }
 }

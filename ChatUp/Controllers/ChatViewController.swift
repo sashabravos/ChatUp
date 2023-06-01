@@ -41,21 +41,24 @@ class ChatViewController: UIViewController, ChatViewDelegate {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            if let messageSender = data[Samples.FStore.senderField] as? String, let messageBody = data[Samples.FStore.bodyField] as? String {
+                            if let messageSender = data[Samples.FStore.senderField] as? String,
+                                let messageBody = data[Samples.FStore.bodyField] as? String {
                                 let newMessage = Message(sender: messageSender, body: messageBody)
                                 self.chatView.messages.append(newMessage)
                                 
                                 DispatchQueue.main.async {
                                     self.chatView.tableView.reloadData()
+                                    let indexPath = IndexPath(row: self.chatView.messages.count - 1, section: 0)
+                                    self.chatView.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                                 }
                             }
                         }
                     }
                 }
             }
-    }
-    
+        }
     // MARK: - LogOut Button
+    
     private func addLogOutButton() {
         navigationItem.hidesBackButton = true
         lazy var logOutButton = UIBarButtonItem(title: "Log Out",
@@ -74,6 +77,7 @@ class ChatViewController: UIViewController, ChatViewDelegate {
     }
     
     // MARK: - Send Button's methods
+    
     @objc func sendButtonPressed(sender: UIButton) {
         if let messageBody = chatView.messageTF.text,
            let messageSender = Auth.auth().currentUser?.email {

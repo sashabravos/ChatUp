@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 protocol ChatViewDelegate: AnyObject {
 }
 
-final class ChatView: UIView, UITableViewDelegate, UITableViewDataSource {
+final class ChatView: UIView {
     
     weak var delegate: ChatViewDelegate?
     
@@ -108,8 +110,12 @@ final class ChatView: UIView, UITableViewDelegate, UITableViewDataSource {
             sendButton.trailingAnchor.constraint(equalTo: messageView.trailingAnchor, constant: -20.0)
         ])
     }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ChatView: UITableViewDataSource {
     
-    // MARK: - UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -119,16 +125,37 @@ final class ChatView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message = messages[indexPath.row]
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MessageTableViewCell.identifier,
                                                        for: indexPath) as? MessageTableViewCell else {
             return UITableViewCell()
         }
-        cell.messageLabel.text = "\(messages[indexPath.row].sender): \(messages[indexPath.row].body)"
+        cell.messageLabel.text = message.body
+        
+        //This is a message from the current user.
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftAvatar.isHidden = true
+            cell.rightAvatar.isHidden = false
+            cell.messageBubble.backgroundColor = Samples.Colors.lightPurple
+            cell.messageLabel.textColor = Samples.Colors.purple
+        }
+        //This is a message from another sender.
+        else {
+            cell.leftAvatar.isHidden = false
+            cell.rightAvatar.isHidden = true
+            cell.messageBubble.backgroundColor = Samples.Colors.purple
+            cell.messageLabel.textColor = Samples.Colors.lightPurple
+        }
+        
         return cell
     }
-    
-    // MARK: - UITableViewDelegate
+}
+
+// MARK: - UITableViewDelegate
+extension ChatView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
 }
