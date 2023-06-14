@@ -29,7 +29,7 @@ class MessageTableViewCell: UITableViewCell {
     lazy var messageBubble: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 5.0
-        view.backgroundColor = Samples.Colors.purple
+        view.backgroundColor = Colors.purple
         
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(messageLabel)
@@ -48,13 +48,13 @@ class MessageTableViewCell: UITableViewCell {
     }()
     
     lazy var rightAvatar: UIImageView = {
-        let image = UIImageView.init(image: Samples.Avatars.blueFace)
+        let image = UIImageView.init(image: Avatars.blueFace)
         image.contentMode = .scaleAspectFill
         return image
     }()
     
     lazy var leftAvatar: UIImageView = {
-        let image = UIImageView.init(image: Samples.Avatars.purpleFace)
+        let image = UIImageView.init(image: Avatars.purpleFace)
         image.contentMode = .scaleAspectFill
         return image
     }()

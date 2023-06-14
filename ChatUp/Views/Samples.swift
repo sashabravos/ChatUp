@@ -92,28 +92,4 @@ struct Samples {
         static let textFieldShadowRadius: CGFloat = 5.0
         static let textFieldShadowOffset = CGSize(width: 1.0, height: 2.0)
     }
-    
-    public enum Colors {
-
-        static let blue = UIColor(named: "BrandBlue") ?? UIColor()
-        static let lightBlue = UIColor(named: "BrandLightBlue") ?? UIColor()
-        static let purple = UIColor(named: "BrandPurple") ?? UIColor()
-        static let lightPurple = UIColor(named: "BrandLightPurple") ?? UIColor()
-    }
-    
-    public enum Avatars {
-        
-        static let blueFace = UIImage(named: "blueFace")
-        static let yellowFace = UIImage(named: "yellowFace")
-        static let purpleFace = UIImage(named: "purpleFace")
-        static let pinkFace = UIImage(named: "pinkFace")
-        static let greenFace = UIImage(named: "greenFace")
-    }
-    
-    public enum FStore {
-        static let collectionName = "messages"
-        static let senderField = "sender"
-        static let bodyField = "body"
-        static let dateField = "date"
-    }
 }

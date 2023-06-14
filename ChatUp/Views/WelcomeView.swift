@@ -23,7 +23,7 @@ final class WelcomeView: UIView {
     lazy var appNameLabel: CLTypingLabel = {
         let label = CLTypingLabel()
         label.numberOfLines = 1
-        label.textColor = Samples.Colors.blue
+        label.textColor = Colors.blue
         label.font = .systemFont(ofSize: 50.0, weight: .black)
         label.textAlignment = .natural
         label.isEnabled = true

@@ -50,7 +50,7 @@ final class RegisterView: UIView {
     
     private func setSubViews() {
         
-        self.backgroundColor = Samples.Colors.lightBlue
+        self.backgroundColor = Colors.lightBlue
         
         [emailView, passwordView, UINavigationBar()].forEach {
             self.addSubview($0)

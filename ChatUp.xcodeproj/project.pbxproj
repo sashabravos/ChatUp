@@ -20,9 +20,10 @@
 		0359BCA629E36B0400BD7608 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359BCA529E36B0400BD7608 /* WelcomeView.swift */; };
 		0359BCA829E36C4F00BD7608 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359BCA729E36C4F00BD7608 /* RegisterView.swift */; };
 		0359BCAA29E36C5B00BD7608 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359BCA929E36C5B00BD7608 /* LoginView.swift */; };
-		0382413A29F05BBD00E97D4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0382413929F05BBD00E97D4B /* GoogleService-Info.plist */; };
 		038A487229E8843A0079C307 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A487129E8843A0079C307 /* Message.swift */; };
 		038A487429EB24290079C307 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038A487329EB24290079C307 /* MessageTableViewCell.swift */; };
+		03E4264C2A39DFD10098F7BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E4264B2A39DFD10098F7BF /* Constants.swift */; };
+		03E4264E2A39E2A50098F7BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03E4264D2A39E2A50098F7BF /* GoogleService-Info.plist */; };
 		0A9CA2535F94CA7B9C1AD79C /* Pods_ChatUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD52BDAC77A0EA953EF0550 /* Pods_ChatUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +43,10 @@
 		0359BCA529E36B0400BD7608 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0359BCA729E36C4F00BD7608 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		0359BCA929E36C5B00BD7608 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		0382413929F05BBD00E97D4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		038A487129E8843A0079C307 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		038A487329EB24290079C307 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		03E4264B2A39DFD10098F7BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		03E4264D2A39E2A50098F7BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		336BE0663C1EF4D596D41181 /* Pods-ChatUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUp.debug.xcconfig"; path = "Target Support Files/Pods-ChatUp/Pods-ChatUp.debug.xcconfig"; sourceTree = "<group>"; };
 		581AD1933F0599188D4FDE89 /* Pods-ChatUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatUp.release.xcconfig"; path = "Target Support Files/Pods-ChatUp/Pods-ChatUp.release.xcconfig"; sourceTree = "<group>"; };
 		EAD52BDAC77A0EA953EF0550 /* Pods_ChatUp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatUp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				03248CBA29DDC8F800C640FF /* ChatUp */,
+				03248CC929DDC8F900C640FF /* Info.plist */,
+				03E4264A2A39DF560098F7BF /* Support files */,
 				03248CB929DDC8F800C640FF /* Products */,
 				899B32A44CC340C052EEB0D1 /* Pods */,
 				E7C6B01E309ECAAEC154320B /* Frameworks */,
@@ -88,10 +92,6 @@
 				03248CD229DDCAB900C640FF /* Models */,
 				03248CD129DDCAAD00C640FF /* Views */,
 				03248CD029DDCA8E00C640FF /* Controllers */,
-				03248CC429DDC8F900C640FF /* Assets.xcassets */,
-				03248CC629DDC8F900C640FF /* LaunchScreen.storyboard */,
-				03248CC929DDC8F900C640FF /* Info.plist */,
-				0382413929F05BBD00E97D4B /* GoogleService-Info.plist */,
 			);
 			path = ChatUp;
 			sourceTree = "<group>";
@@ -124,8 +124,19 @@
 			isa = PBXGroup;
 			children = (
 				038A487129E8843A0079C307 /* Message.swift */,
+				03E4264B2A39DFD10098F7BF /* Constants.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		03E4264A2A39DF560098F7BF /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				03248CC629DDC8F900C640FF /* LaunchScreen.storyboard */,
+				03248CC429DDC8F900C640FF /* Assets.xcassets */,
+				03E4264D2A39E2A50098F7BF /* GoogleService-Info.plist */,
+			);
+			path = "Support files";
 			sourceTree = "<group>";
 		};
 		899B32A44CC340C052EEB0D1 /* Pods */ = {
@@ -208,7 +219,7 @@
 			files = (
 				03248CC829DDC8F900C640FF /* LaunchScreen.storyboard in Resources */,
 				03248CC529DDC8F900C640FF /* Assets.xcassets in Resources */,
-				0382413A29F05BBD00E97D4B /* GoogleService-Info.plist in Resources */,
+				03E4264E2A39E2A50098F7BF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +303,7 @@
 				03248CD429DDCB3D00C640FF /* Samples.swift in Sources */,
 				0359BCAA29E36C5B00BD7608 /* LoginView.swift in Sources */,
 				038A487229E8843A0079C307 /* Message.swift in Sources */,
+				03E4264C2A39DFD10098F7BF /* Constants.swift in Sources */,
 				03248CBC29DDC8F800C640FF /* AppDelegate.swift in Sources */,
 				03248CBE29DDC8F800C640FF /* SceneDelegate.swift in Sources */,
 			);
@@ -438,7 +450,6 @@
 				INFOPLIST_FILE = ChatUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,7 +478,6 @@
 				INFOPLIST_FILE = ChatUp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -52,7 +52,7 @@ final class LoginView: UIView {
     
     private func setSubViews() {
         
-        self.backgroundColor = Samples.Colors.blue
+        self.backgroundColor = Colors.blue
         
         [emailView, passwordView, UINavigationBar()].forEach {
             self.addSubview($0)

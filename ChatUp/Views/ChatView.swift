@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseAuth
-import FirebaseFirestore
 
 protocol ChatViewDelegate: AnyObject {
 }
@@ -44,7 +43,7 @@ final class ChatView: UIView {
     
     lazy var sendButton: UIButton = {
         let button = UIButton()
-        button.tintColor = Samples.Colors.lightPurple
+        button.tintColor = Colors.lightPurple
         button.titleLabel!.numberOfLines = 0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18.0, weight: .regular)
         button.setImage(UIImage(systemName: "paperplane.fill", withConfiguration: largeConfig), for: .normal)
@@ -81,7 +80,7 @@ final class ChatView: UIView {
     }
     
     private func setSubViews() {
-        self.backgroundColor = Samples.Colors.purple
+        self.backgroundColor = Colors.purple
         
         [tableView, messageView].forEach {
             self.addSubview($0)
@@ -138,15 +137,15 @@ extension ChatView: UITableViewDataSource {
         if message.sender == Auth.auth().currentUser?.email {
             cell.leftAvatar.isHidden = true
             cell.rightAvatar.isHidden = false
-            cell.messageBubble.backgroundColor = Samples.Colors.lightPurple
-            cell.messageLabel.textColor = Samples.Colors.purple
+            cell.messageBubble.backgroundColor = Colors.lightPurple
+            cell.messageLabel.textColor = Colors.purple
         }
         //This is a message from another sender.
         else {
             cell.leftAvatar.isHidden = false
             cell.rightAvatar.isHidden = true
-            cell.messageBubble.backgroundColor = Samples.Colors.purple
-            cell.messageLabel.textColor = Samples.Colors.lightPurple
+            cell.messageBubble.backgroundColor = Colors.purple
+            cell.messageLabel.textColor = Colors.lightPurple
         }
         
         return cell

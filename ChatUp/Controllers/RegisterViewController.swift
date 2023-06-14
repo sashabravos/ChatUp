@@ -28,7 +28,11 @@ class RegisterViewController: UIViewController, RegisterViewDelegate {
         if let email = registerView.emailTF.text, let password = registerView.passwordTF.text {
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
                 if let registerError = error {
-                    print(registerError.localizedDescription)
+                    
+                    let alert = UIAlertController(title: "Error", message: "\(registerError.localizedDescription)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 } else {
                     // Navigate to the ChatVC
                     self.navigationController?.pushViewController(ChatViewController(), animated: true)

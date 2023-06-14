@@ -30,8 +30,8 @@ class ChatViewController: UIViewController, ChatViewDelegate {
     }
     
     func loadMessages() {
-        dataBase.collection(Samples.FStore.collectionName)
-            .order(by: Samples.FStore.dateField)
+        dataBase.collection(FStore.collectionName)
+            .order(by: FStore.dateField)
             .addSnapshotListener { (querySnapshot, error) in
                 self.chatView.messages = []
                 
@@ -41,8 +41,8 @@ class ChatViewController: UIViewController, ChatViewDelegate {
                     if let snapshotDocuments = querySnapshot?.documents {
                         for doc in snapshotDocuments {
                             let data = doc.data()
-                            if let messageSender = data[Samples.FStore.senderField] as? String,
-                                let messageBody = data[Samples.FStore.bodyField] as? String {
+                            if let messageSender = data[FStore.senderField] as? String,
+                                let messageBody = data[FStore.bodyField] as? String {
                                 let newMessage = Message(sender: messageSender, body: messageBody)
                                 self.chatView.messages.append(newMessage)
                                 
@@ -81,10 +81,10 @@ class ChatViewController: UIViewController, ChatViewDelegate {
     @objc func sendButtonPressed(sender: UIButton) {
         if let messageBody = chatView.messageTF.text,
            let messageSender = Auth.auth().currentUser?.email {
-            dataBase.collection(Samples.FStore.collectionName).addDocument(data: [
-                Samples.FStore.senderField: messageSender,
-                Samples.FStore.bodyField: messageBody,
-                Samples.FStore.dateField: Date().timeIntervalSince1970
+            dataBase.collection(FStore.collectionName).addDocument(data: [
+                FStore.senderField: messageSender,
+                FStore.bodyField: messageBody,
+                FStore.dateField: Date().timeIntervalSince1970
             ]) { (error) in
                 if let e = error {
                     print("There was an issue saving data to firestore, \(e)")
