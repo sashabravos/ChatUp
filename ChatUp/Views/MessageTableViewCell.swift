@@ -19,7 +19,7 @@ class MessageTableViewCell: UITableViewCell {
         stackView.spacing = 20.0
         stackView.contentMode = .scaleToFill
         
-        [messageBubble, rightAvatar, leftAvatar].forEach {
+        [leftAvatar, messageBubble, rightAvatar].forEach {
             stackView.addArrangedSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -82,7 +82,7 @@ class MessageTableViewCell: UITableViewCell {
             cellSV.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10.0),
             
             messageBubble.topAnchor.constraint(equalTo: cellSV.topAnchor),
-            messageBubble.leadingAnchor.constraint(equalTo: leftAvatar.trailingAnchor, constant: -20.0),
+            messageBubble.leadingAnchor.constraint(equalTo: leftAvatar.trailingAnchor, constant: 50.0),
             messageBubble.bottomAnchor.constraint(equalTo: cellSV.bottomAnchor),
             messageBubble.trailingAnchor.constraint(equalTo: rightAvatar.leadingAnchor, constant: -20.0),
             
